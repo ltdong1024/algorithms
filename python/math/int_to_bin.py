@@ -11,12 +11,8 @@ import math
 def int_to_bin(n, min_length=8):
     if n == 0:
         return "0"*min_length
-    if n == 1:
-        return "0"*(min_length - 1) + "1"
-    if n == 2:
-        return "0"*(min_length - 2) + "10"
     
-    max_power = int(math.ceil(math.log(n,2)))
+    max_power = int(math.log(n,2) + 1)
     powers = [pow(2,i) for i in range(max_power)][::-1]
 
     binary = ""
