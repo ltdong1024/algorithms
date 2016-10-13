@@ -2,7 +2,7 @@
 from: https://www.codewars.com/kata/base64-encoding/train/python
 from: https://en.wikipedia.org/wiki/Base64
 
-left: solve tailing "A" on base 64
+Using non of the built-in functions of the python standard library
 '''
 
 
@@ -79,8 +79,12 @@ def to_base_64(str):
     base64 = "".join([int_to_base64(bin_to_int(binary)) for binary in binaries])
 
     # trim tailing "A"
-    while base64[-1] == "A":
+    if (len(str)*8)%3 == 0:
+        base64 = base64[:-4]
+    if (len(str)*8)%3 == 1:
         base64 = base64[:-1]
+    if (len(str)*8)%3 == 2:
+        base64 = base64[:-2]
 
     return base64
 
