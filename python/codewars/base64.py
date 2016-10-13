@@ -1,6 +1,6 @@
 '''
-from:
-from:
+from: https://www.codewars.com/kata/base64-encoding/train/python
+from: https://en.wikipedia.org/wiki/Base64
 
 left: solve tailing "A" on base 64
 '''
